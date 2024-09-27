@@ -109,6 +109,8 @@ int main(void)
 
   HAL_GPIO_WritePin(EN0_GPIO_Port, EN0_Pin, 1);
   HAL_GPIO_WritePin(EN1_GPIO_Port, EN1_Pin, 0);
+  HAL_GPIO_WritePin(GPIOB, SEG0_Pin | SEG1_Pin | SEG2_Pin | SEG3_Pin |
+		  SEG4_Pin | SEG5_Pin | SEG6_Pin, 1);
   set_timer(0, 500);
   while (1)
   {
