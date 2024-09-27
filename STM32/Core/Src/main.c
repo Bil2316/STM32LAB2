@@ -156,6 +156,7 @@ int main(void)
 
   while (1)
   {
+	  //Ex 6 is the same Ex5
 	  second++;
 	  if (second >= 60)
 	  {
