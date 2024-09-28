@@ -8,7 +8,7 @@
 #include "timer.h"
 
 #define TIMER_CYCLE 10
-#define MAX_COUNTER 2
+#define MAX_COUNTER 1
 
 int timer_counter[10] = {0};
 int timer_flag[10] = {0};
