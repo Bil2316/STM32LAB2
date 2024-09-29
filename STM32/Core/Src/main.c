@@ -154,7 +154,6 @@ int main(void)
 		  | ENM4_Pin | ENM5_Pin | ENM6_Pin | ENM7_Pin, 1);
 
   set_timer(0, 250);
-  set_timer(1, 2001);
   while (1)
   {
 	  if (timer_flag[0] == 1)
