@@ -150,7 +150,7 @@ int main(void)
   HAL_GPIO_WritePin(GPIOA, ENM0_Pin | ENM1_Pin | ENM2_Pin | ENM3_Pin
 		  | ENM4_Pin | ENM5_Pin | ENM6_Pin | ENM7_Pin, 1);
 
-  set_timer(0, 250);
+  set_timer(0, 100);
   while (1)
   {
 	  if (timer_flag[0] == 1)
@@ -158,7 +158,7 @@ int main(void)
 		  updateLEDMatrix(index_led_matrix);
 		  index_led_matrix++;
 		  if (index_led_matrix >= MAX_LED_MATRIX) index_led_matrix = 0;
-		  set_timer(0, 250);
+		  set_timer(0, 100);
 	  }
 
     /* USER CODE END WHILE */
