@@ -139,16 +139,8 @@ int main(void)
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   HAL_GPIO_WritePin(GPIOA, EN0_Pin | EN1_Pin | EN2_Pin | EN3_Pin, 1);
-  set_timer(0, 500);
   while (1)
   {
-	  if (timer_flag[0] == 1)
-	  {
-		  update7SEG(index_led);
-		  index_led++;
-		  if (index_led >= 4) index_led = 0;
-		  set_timer(0, 500);
-	  }
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
@@ -284,9 +276,18 @@ static void MX_GPIO_Init(void)
 }
 
 /* USER CODE BEGIN 4 */
+int counter = 50;
+
 void HAL_TIM_PeriodElapsedCallback ( TIM_HandleTypeDef * htim )
 {
-	timer_run();
+	counter--;
+	if (counter <= 0)
+	{
+		update7SEG(index_led);
+		index_led++;
+		if (index_led >= 4) index_led = 0;
+		counter = 50;
+	}
 }
 /* USER CODE END 4 */
 
