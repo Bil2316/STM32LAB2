@@ -151,13 +151,18 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   HAL_GPIO_WritePin(GPIOA, EN0_Pin | EN1_Pin | EN2_Pin | EN3_Pin, 1);
   HAL_GPIO_WritePin(DOT_GPIO_Port, DOT_Pin, 1);
-  set_timer(0, 250);
-  set_timer(1, 1000);
 
+  set_timer(0, 250);
+  set_timer(1, 500);
+  set_timer(2, 1000);
   while (1)
   {
-	  // Ex7 is the same Ex5
-	  second++;
+	  if (timer_flag[2] == 1)
+	  {
+		  second++;
+		  set_timer(2, 1000);
+	  }
+
 	  if (second >= 60)
 	  {
 		  second = 0;
@@ -185,10 +190,8 @@ int main(void)
 	  if (timer_flag[1] == 1)
 	  {
 		  HAL_GPIO_TogglePin(DOT_GPIO_Port, DOT_Pin);
-		  set_timer(1, 1000);
+		  set_timer(1, 500);
 	  }
-
-	  HAL_Delay(1000);
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
