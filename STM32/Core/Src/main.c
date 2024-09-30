@@ -73,49 +73,51 @@ void displayLEDMatrix(int index)
 	HAL_GPIO_WritePin(ROW7_GPIO_Port, ROW7_Pin, ((matrix_buffer[index] >> 7) & 1) ? GPIO_PIN_RESET : GPIO_PIN_SET);
 }
 
-void updateLEDMatrix(int index)
+void updateLEDMatrix(int index, int shift)
 {
+	int index_shift = (index + shift) % 8;
+
 	switch(index)
 	{
 	case 0:
 		HAL_GPIO_WritePin(ENM7_GPIO_Port, ENM7_Pin, 1);
+		displayLEDMatrix(index_shift);
 		HAL_GPIO_WritePin(ENM0_GPIO_Port, ENM0_Pin, 0);
-		displayLEDMatrix(index);
 		break;
 	case 1:
 		HAL_GPIO_WritePin(ENM0_GPIO_Port, ENM0_Pin, 1);
+		displayLEDMatrix(index_shift);
 		HAL_GPIO_WritePin(ENM1_GPIO_Port, ENM1_Pin, 0);
-		displayLEDMatrix(index);
 		break;
 	case 2:
 		HAL_GPIO_WritePin(ENM1_GPIO_Port, ENM1_Pin, 1);
+		displayLEDMatrix(index_shift);
 		HAL_GPIO_WritePin(ENM2_GPIO_Port, ENM2_Pin, 0);
-		displayLEDMatrix(index);
 		break;
 	case 3:
 		HAL_GPIO_WritePin(ENM2_GPIO_Port, ENM2_Pin, 1);
+		displayLEDMatrix(index_shift);
 		HAL_GPIO_WritePin(ENM3_GPIO_Port, ENM3_Pin, 0);
-		displayLEDMatrix(index);
 		break;
 	case 4:
 		HAL_GPIO_WritePin(ENM3_GPIO_Port, ENM3_Pin, 1);
+		displayLEDMatrix(index_shift);
 		HAL_GPIO_WritePin(ENM4_GPIO_Port, ENM4_Pin, 0);
-		displayLEDMatrix(index);
 		break;
 	case 5:
 		HAL_GPIO_WritePin(ENM4_GPIO_Port, ENM4_Pin, 1);
+		displayLEDMatrix(index_shift);
 		HAL_GPIO_WritePin(ENM5_GPIO_Port, ENM5_Pin, 0);
-		displayLEDMatrix(index);
 		break;
 	case 6:
 		HAL_GPIO_WritePin(ENM5_GPIO_Port, ENM5_Pin, 1);
+		displayLEDMatrix(index_shift);
 		HAL_GPIO_WritePin(ENM6_GPIO_Port, ENM6_Pin, 0);
-		displayLEDMatrix(index);
 		break;
 	case 7:
 		HAL_GPIO_WritePin(ENM6_GPIO_Port, ENM6_Pin, 1);
+		displayLEDMatrix(index_shift);
 		HAL_GPIO_WritePin(ENM7_GPIO_Port, ENM7_Pin, 0);
-		displayLEDMatrix(index);
 		break;
 	default:
 		break;
@@ -178,12 +180,6 @@ int main(void)
 		  }
 		  set_timer(0, 250);
 	  }
-//	  if (timer_flag[1] == 1)
-//	  {
-//		  index_led_matrix_shift++;
-//		  if (index_led_matrix_shift >= MAX_LED_MATRIX) index_led_matrix_shift = 0;
-//		  set_timer(1, 2001);
-//	  }
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
