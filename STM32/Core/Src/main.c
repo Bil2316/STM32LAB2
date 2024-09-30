@@ -105,52 +105,10 @@ int main(void)
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
-  int status = 1;
-
   HAL_GPIO_WritePin(GPIOA, EN0_Pin | EN1_Pin | EN2_Pin | EN3_Pin, 1);
   HAL_GPIO_WritePin(DOT_GPIO_Port, DOT_Pin, 1);
-  set_timer(0, 500);
-  set_timer(1, 1000);
   while (1)
   {
-	  if (timer_flag[0] == 1)
-	  {
-		  switch(status)
-		  	  {
-		  	  case 1:
-		  		  display7SEG(1);
-		  		  HAL_GPIO_WritePin(EN0_GPIO_Port, EN0_Pin, 0);
-		  		  HAL_GPIO_WritePin(EN3_GPIO_Port, EN3_Pin, 1);
-		  		  status = 2;
-		  		  break;
-		  	  case 2:
-		  		  display7SEG(2);
-		  		  HAL_GPIO_WritePin(EN1_GPIO_Port, EN1_Pin, 0);
-				  HAL_GPIO_WritePin(EN0_GPIO_Port, EN0_Pin, 1);
-		  		  status = 3;
-		  		  break;
-		  	case 3:
-				  display7SEG(3);
-				  HAL_GPIO_WritePin(EN2_GPIO_Port, EN2_Pin, 0);
-				  HAL_GPIO_WritePin(EN1_GPIO_Port, EN1_Pin, 1);
-				  status = 4;
-				  break;
-		  	case 4:
-				  display7SEG(0);
-				  HAL_GPIO_WritePin(EN3_GPIO_Port, EN3_Pin, 0);
-				  HAL_GPIO_WritePin(EN2_GPIO_Port, EN2_Pin, 1);
-				  status = 1;
-				  break;
-		  	  default:
-		  		  break;
-		  	  }
-		  set_timer(0, 500);
-	  }
-	  if (timer_flag[1] == 1)
-	  {
-		  HAL_GPIO_TogglePin(DOT_GPIO_Port, DOT_Pin);
-		  set_timer(1, 1000);
-	  }
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
@@ -286,9 +244,53 @@ static void MX_GPIO_Init(void)
 }
 
 /* USER CODE BEGIN 4 */
+int counter1 = 50;
+int counter2 = 100;
+int status = 1;
+
 void HAL_TIM_PeriodElapsedCallback ( TIM_HandleTypeDef * htim )
 {
-	timer_run();
+	counter1--;
+	counter2--;
+
+	if (counter1 <= 0)
+	{
+		switch(status)
+		{
+		case 1:
+			display7SEG(1);
+			HAL_GPIO_WritePin(EN0_GPIO_Port, EN0_Pin, 0);
+			HAL_GPIO_WritePin(EN3_GPIO_Port, EN3_Pin, 1);
+			status = 2;
+			break;
+		case 2:
+			display7SEG(2);
+			HAL_GPIO_WritePin(EN1_GPIO_Port, EN1_Pin, 0);
+			HAL_GPIO_WritePin(EN0_GPIO_Port, EN0_Pin, 1);
+			status = 3;
+			break;
+		case 3:
+			display7SEG(3);
+			HAL_GPIO_WritePin(EN2_GPIO_Port, EN2_Pin, 0);
+			HAL_GPIO_WritePin(EN1_GPIO_Port, EN1_Pin, 1);
+			status = 4;
+			break;
+		case 4:
+			display7SEG(0);
+			HAL_GPIO_WritePin(EN3_GPIO_Port, EN3_Pin, 0);
+			HAL_GPIO_WritePin(EN2_GPIO_Port, EN2_Pin, 1);
+			status = 1;
+			break;
+		default:
+			break;
+		}
+		counter1 = 50;
+	}
+	if (counter2 <= 0)
+	{
+		HAL_GPIO_TogglePin(DOT_GPIO_Port, DOT_Pin);
+		counter2 = 100;
+	}
 }
 /* USER CODE END 4 */
 
