@@ -259,14 +259,14 @@ void updateLEDMatrix(int index)
  80002ca:	f44f 4100 	mov.w	r1, #32768	; 0x8000
  80002ce:	483f      	ldr	r0, [pc, #252]	; (80003cc <updateLEDMatrix+0x13c>)
  80002d0:	f000 fdb4 	bl	8000e3c <HAL_GPIO_WritePin>
-		HAL_GPIO_WritePin(ENM0_GPIO_Port, ENM0_Pin, 0);
- 80002d4:	2200      	movs	r2, #0
- 80002d6:	2104      	movs	r1, #4
- 80002d8:	483c      	ldr	r0, [pc, #240]	; (80003cc <updateLEDMatrix+0x13c>)
- 80002da:	f000 fdaf 	bl	8000e3c <HAL_GPIO_WritePin>
 		displayLEDMatrix(index);
- 80002de:	6878      	ldr	r0, [r7, #4]
- 80002e0:	f7ff ff34 	bl	800014c <displayLEDMatrix>
+ 80002d4:	6878      	ldr	r0, [r7, #4]
+ 80002d6:	f7ff ff39 	bl	800014c <displayLEDMatrix>
+		HAL_GPIO_WritePin(ENM0_GPIO_Port, ENM0_Pin, 0);
+ 80002da:	2200      	movs	r2, #0
+ 80002dc:	2104      	movs	r1, #4
+ 80002de:	483b      	ldr	r0, [pc, #236]	; (80003cc <updateLEDMatrix+0x13c>)
+ 80002e0:	f000 fdac 	bl	8000e3c <HAL_GPIO_WritePin>
 		break;
  80002e4:	e06d      	b.n	80003c2 <updateLEDMatrix+0x132>
 	case 1:
@@ -275,14 +275,14 @@ void updateLEDMatrix(int index)
  80002e8:	2104      	movs	r1, #4
  80002ea:	4838      	ldr	r0, [pc, #224]	; (80003cc <updateLEDMatrix+0x13c>)
  80002ec:	f000 fda6 	bl	8000e3c <HAL_GPIO_WritePin>
-		HAL_GPIO_WritePin(ENM1_GPIO_Port, ENM1_Pin, 0);
- 80002f0:	2200      	movs	r2, #0
- 80002f2:	2108      	movs	r1, #8
- 80002f4:	4835      	ldr	r0, [pc, #212]	; (80003cc <updateLEDMatrix+0x13c>)
- 80002f6:	f000 fda1 	bl	8000e3c <HAL_GPIO_WritePin>
 		displayLEDMatrix(index);
- 80002fa:	6878      	ldr	r0, [r7, #4]
- 80002fc:	f7ff ff26 	bl	800014c <displayLEDMatrix>
+ 80002f0:	6878      	ldr	r0, [r7, #4]
+ 80002f2:	f7ff ff2b 	bl	800014c <displayLEDMatrix>
+		HAL_GPIO_WritePin(ENM1_GPIO_Port, ENM1_Pin, 0);
+ 80002f6:	2200      	movs	r2, #0
+ 80002f8:	2108      	movs	r1, #8
+ 80002fa:	4834      	ldr	r0, [pc, #208]	; (80003cc <updateLEDMatrix+0x13c>)
+ 80002fc:	f000 fd9e 	bl	8000e3c <HAL_GPIO_WritePin>
 		break;
  8000300:	e05f      	b.n	80003c2 <updateLEDMatrix+0x132>
 	case 2:
@@ -291,14 +291,14 @@ void updateLEDMatrix(int index)
  8000304:	2108      	movs	r1, #8
  8000306:	4831      	ldr	r0, [pc, #196]	; (80003cc <updateLEDMatrix+0x13c>)
  8000308:	f000 fd98 	bl	8000e3c <HAL_GPIO_WritePin>
-		HAL_GPIO_WritePin(ENM2_GPIO_Port, ENM2_Pin, 0);
- 800030c:	2200      	movs	r2, #0
- 800030e:	f44f 6180 	mov.w	r1, #1024	; 0x400
- 8000312:	482e      	ldr	r0, [pc, #184]	; (80003cc <updateLEDMatrix+0x13c>)
- 8000314:	f000 fd92 	bl	8000e3c <HAL_GPIO_WritePin>
 		displayLEDMatrix(index);
- 8000318:	6878      	ldr	r0, [r7, #4]
- 800031a:	f7ff ff17 	bl	800014c <displayLEDMatrix>
+ 800030c:	6878      	ldr	r0, [r7, #4]
+ 800030e:	f7ff ff1d 	bl	800014c <displayLEDMatrix>
+		HAL_GPIO_WritePin(ENM2_GPIO_Port, ENM2_Pin, 0);
+ 8000312:	2200      	movs	r2, #0
+ 8000314:	f44f 6180 	mov.w	r1, #1024	; 0x400
+ 8000318:	482c      	ldr	r0, [pc, #176]	; (80003cc <updateLEDMatrix+0x13c>)
+ 800031a:	f000 fd8f 	bl	8000e3c <HAL_GPIO_WritePin>
 		break;
  800031e:	e050      	b.n	80003c2 <updateLEDMatrix+0x132>
 	case 3:
@@ -307,14 +307,14 @@ void updateLEDMatrix(int index)
  8000322:	f44f 6180 	mov.w	r1, #1024	; 0x400
  8000326:	4829      	ldr	r0, [pc, #164]	; (80003cc <updateLEDMatrix+0x13c>)
  8000328:	f000 fd88 	bl	8000e3c <HAL_GPIO_WritePin>
-		HAL_GPIO_WritePin(ENM3_GPIO_Port, ENM3_Pin, 0);
- 800032c:	2200      	movs	r2, #0
- 800032e:	f44f 6100 	mov.w	r1, #2048	; 0x800
- 8000332:	4826      	ldr	r0, [pc, #152]	; (80003cc <updateLEDMatrix+0x13c>)
- 8000334:	f000 fd82 	bl	8000e3c <HAL_GPIO_WritePin>
 		displayLEDMatrix(index);
- 8000338:	6878      	ldr	r0, [r7, #4]
- 800033a:	f7ff ff07 	bl	800014c <displayLEDMatrix>
+ 800032c:	6878      	ldr	r0, [r7, #4]
+ 800032e:	f7ff ff0d 	bl	800014c <displayLEDMatrix>
+		HAL_GPIO_WritePin(ENM3_GPIO_Port, ENM3_Pin, 0);
+ 8000332:	2200      	movs	r2, #0
+ 8000334:	f44f 6100 	mov.w	r1, #2048	; 0x800
+ 8000338:	4824      	ldr	r0, [pc, #144]	; (80003cc <updateLEDMatrix+0x13c>)
+ 800033a:	f000 fd7f 	bl	8000e3c <HAL_GPIO_WritePin>
 		break;
  800033e:	e040      	b.n	80003c2 <updateLEDMatrix+0x132>
 	case 4:
@@ -323,14 +323,14 @@ void updateLEDMatrix(int index)
  8000342:	f44f 6100 	mov.w	r1, #2048	; 0x800
  8000346:	4821      	ldr	r0, [pc, #132]	; (80003cc <updateLEDMatrix+0x13c>)
  8000348:	f000 fd78 	bl	8000e3c <HAL_GPIO_WritePin>
-		HAL_GPIO_WritePin(ENM4_GPIO_Port, ENM4_Pin, 0);
- 800034c:	2200      	movs	r2, #0
- 800034e:	f44f 5180 	mov.w	r1, #4096	; 0x1000
- 8000352:	481e      	ldr	r0, [pc, #120]	; (80003cc <updateLEDMatrix+0x13c>)
- 8000354:	f000 fd72 	bl	8000e3c <HAL_GPIO_WritePin>
 		displayLEDMatrix(index);
- 8000358:	6878      	ldr	r0, [r7, #4]
- 800035a:	f7ff fef7 	bl	800014c <displayLEDMatrix>
+ 800034c:	6878      	ldr	r0, [r7, #4]
+ 800034e:	f7ff fefd 	bl	800014c <displayLEDMatrix>
+		HAL_GPIO_WritePin(ENM4_GPIO_Port, ENM4_Pin, 0);
+ 8000352:	2200      	movs	r2, #0
+ 8000354:	f44f 5180 	mov.w	r1, #4096	; 0x1000
+ 8000358:	481c      	ldr	r0, [pc, #112]	; (80003cc <updateLEDMatrix+0x13c>)
+ 800035a:	f000 fd6f 	bl	8000e3c <HAL_GPIO_WritePin>
 		break;
  800035e:	e030      	b.n	80003c2 <updateLEDMatrix+0x132>
 	case 5:
@@ -339,14 +339,14 @@ void updateLEDMatrix(int index)
  8000362:	f44f 5180 	mov.w	r1, #4096	; 0x1000
  8000366:	4819      	ldr	r0, [pc, #100]	; (80003cc <updateLEDMatrix+0x13c>)
  8000368:	f000 fd68 	bl	8000e3c <HAL_GPIO_WritePin>
-		HAL_GPIO_WritePin(ENM5_GPIO_Port, ENM5_Pin, 0);
- 800036c:	2200      	movs	r2, #0
- 800036e:	f44f 5100 	mov.w	r1, #8192	; 0x2000
- 8000372:	4816      	ldr	r0, [pc, #88]	; (80003cc <updateLEDMatrix+0x13c>)
- 8000374:	f000 fd62 	bl	8000e3c <HAL_GPIO_WritePin>
 		displayLEDMatrix(index);
- 8000378:	6878      	ldr	r0, [r7, #4]
- 800037a:	f7ff fee7 	bl	800014c <displayLEDMatrix>
+ 800036c:	6878      	ldr	r0, [r7, #4]
+ 800036e:	f7ff feed 	bl	800014c <displayLEDMatrix>
+		HAL_GPIO_WritePin(ENM5_GPIO_Port, ENM5_Pin, 0);
+ 8000372:	2200      	movs	r2, #0
+ 8000374:	f44f 5100 	mov.w	r1, #8192	; 0x2000
+ 8000378:	4814      	ldr	r0, [pc, #80]	; (80003cc <updateLEDMatrix+0x13c>)
+ 800037a:	f000 fd5f 	bl	8000e3c <HAL_GPIO_WritePin>
 		break;
  800037e:	e020      	b.n	80003c2 <updateLEDMatrix+0x132>
 	case 6:
@@ -355,14 +355,14 @@ void updateLEDMatrix(int index)
  8000382:	f44f 5100 	mov.w	r1, #8192	; 0x2000
  8000386:	4811      	ldr	r0, [pc, #68]	; (80003cc <updateLEDMatrix+0x13c>)
  8000388:	f000 fd58 	bl	8000e3c <HAL_GPIO_WritePin>
-		HAL_GPIO_WritePin(ENM6_GPIO_Port, ENM6_Pin, 0);
- 800038c:	2200      	movs	r2, #0
- 800038e:	f44f 4180 	mov.w	r1, #16384	; 0x4000
- 8000392:	480e      	ldr	r0, [pc, #56]	; (80003cc <updateLEDMatrix+0x13c>)
- 8000394:	f000 fd52 	bl	8000e3c <HAL_GPIO_WritePin>
 		displayLEDMatrix(index);
- 8000398:	6878      	ldr	r0, [r7, #4]
- 800039a:	f7ff fed7 	bl	800014c <displayLEDMatrix>
+ 800038c:	6878      	ldr	r0, [r7, #4]
+ 800038e:	f7ff fedd 	bl	800014c <displayLEDMatrix>
+		HAL_GPIO_WritePin(ENM6_GPIO_Port, ENM6_Pin, 0);
+ 8000392:	2200      	movs	r2, #0
+ 8000394:	f44f 4180 	mov.w	r1, #16384	; 0x4000
+ 8000398:	480c      	ldr	r0, [pc, #48]	; (80003cc <updateLEDMatrix+0x13c>)
+ 800039a:	f000 fd4f 	bl	8000e3c <HAL_GPIO_WritePin>
 		break;
  800039e:	e010      	b.n	80003c2 <updateLEDMatrix+0x132>
 	case 7:
@@ -371,14 +371,14 @@ void updateLEDMatrix(int index)
  80003a2:	f44f 4180 	mov.w	r1, #16384	; 0x4000
  80003a6:	4809      	ldr	r0, [pc, #36]	; (80003cc <updateLEDMatrix+0x13c>)
  80003a8:	f000 fd48 	bl	8000e3c <HAL_GPIO_WritePin>
-		HAL_GPIO_WritePin(ENM7_GPIO_Port, ENM7_Pin, 0);
- 80003ac:	2200      	movs	r2, #0
- 80003ae:	f44f 4100 	mov.w	r1, #32768	; 0x8000
- 80003b2:	4806      	ldr	r0, [pc, #24]	; (80003cc <updateLEDMatrix+0x13c>)
- 80003b4:	f000 fd42 	bl	8000e3c <HAL_GPIO_WritePin>
 		displayLEDMatrix(index);
- 80003b8:	6878      	ldr	r0, [r7, #4]
- 80003ba:	f7ff fec7 	bl	800014c <displayLEDMatrix>
+ 80003ac:	6878      	ldr	r0, [r7, #4]
+ 80003ae:	f7ff fecd 	bl	800014c <displayLEDMatrix>
+		HAL_GPIO_WritePin(ENM7_GPIO_Port, ENM7_Pin, 0);
+ 80003b2:	2200      	movs	r2, #0
+ 80003b4:	f44f 4100 	mov.w	r1, #32768	; 0x8000
+ 80003b8:	4804      	ldr	r0, [pc, #16]	; (80003cc <updateLEDMatrix+0x13c>)
+ 80003ba:	f000 fd3f 	bl	8000e3c <HAL_GPIO_WritePin>
 		break;
  80003be:	e000      	b.n	80003c2 <updateLEDMatrix+0x132>
 	default:
