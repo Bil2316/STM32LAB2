@@ -615,17 +615,17 @@ void HAL_TIM_PeriodElapsedCallback ( TIM_HandleTypeDef * htim )
  800048c:	080004fb 	.word	0x080004fb
 		{
 		case 1:
-			display7SEG(1);
- 8000490:	2001      	movs	r0, #1
- 8000492:	f7ff fe5b 	bl	800014c <display7SEG>
-			HAL_GPIO_WritePin(EN0_GPIO_Port, EN0_Pin, 0);
- 8000496:	2200      	movs	r2, #0
- 8000498:	2140      	movs	r1, #64	; 0x40
- 800049a:	482e      	ldr	r0, [pc, #184]	; (8000554 <HAL_TIM_PeriodElapsedCallback+0x108>)
- 800049c:	f000 fc00 	bl	8000ca0 <HAL_GPIO_WritePin>
 			HAL_GPIO_WritePin(EN3_GPIO_Port, EN3_Pin, 1);
- 80004a0:	2201      	movs	r2, #1
- 80004a2:	f44f 7100 	mov.w	r1, #512	; 0x200
+ 8000490:	2201      	movs	r2, #1
+ 8000492:	f44f 7100 	mov.w	r1, #512	; 0x200
+ 8000496:	482f      	ldr	r0, [pc, #188]	; (8000554 <HAL_TIM_PeriodElapsedCallback+0x108>)
+ 8000498:	f000 fc02 	bl	8000ca0 <HAL_GPIO_WritePin>
+			display7SEG(1);
+ 800049c:	2001      	movs	r0, #1
+ 800049e:	f7ff fe55 	bl	800014c <display7SEG>
+			HAL_GPIO_WritePin(EN0_GPIO_Port, EN0_Pin, 0);
+ 80004a2:	2200      	movs	r2, #0
+ 80004a4:	2140      	movs	r1, #64	; 0x40
  80004a6:	482b      	ldr	r0, [pc, #172]	; (8000554 <HAL_TIM_PeriodElapsedCallback+0x108>)
  80004a8:	f000 fbfa 	bl	8000ca0 <HAL_GPIO_WritePin>
 			status = 2;
@@ -635,17 +635,17 @@ void HAL_TIM_PeriodElapsedCallback ( TIM_HandleTypeDef * htim )
 			break;
  80004b2:	e036      	b.n	8000522 <HAL_TIM_PeriodElapsedCallback+0xd6>
 		case 2:
-			display7SEG(2);
- 80004b4:	2002      	movs	r0, #2
- 80004b6:	f7ff fe49 	bl	800014c <display7SEG>
-			HAL_GPIO_WritePin(EN1_GPIO_Port, EN1_Pin, 0);
- 80004ba:	2200      	movs	r2, #0
- 80004bc:	2180      	movs	r1, #128	; 0x80
- 80004be:	4825      	ldr	r0, [pc, #148]	; (8000554 <HAL_TIM_PeriodElapsedCallback+0x108>)
- 80004c0:	f000 fbee 	bl	8000ca0 <HAL_GPIO_WritePin>
 			HAL_GPIO_WritePin(EN0_GPIO_Port, EN0_Pin, 1);
- 80004c4:	2201      	movs	r2, #1
- 80004c6:	2140      	movs	r1, #64	; 0x40
+ 80004b4:	2201      	movs	r2, #1
+ 80004b6:	2140      	movs	r1, #64	; 0x40
+ 80004b8:	4826      	ldr	r0, [pc, #152]	; (8000554 <HAL_TIM_PeriodElapsedCallback+0x108>)
+ 80004ba:	f000 fbf1 	bl	8000ca0 <HAL_GPIO_WritePin>
+			display7SEG(2);
+ 80004be:	2002      	movs	r0, #2
+ 80004c0:	f7ff fe44 	bl	800014c <display7SEG>
+			HAL_GPIO_WritePin(EN1_GPIO_Port, EN1_Pin, 0);
+ 80004c4:	2200      	movs	r2, #0
+ 80004c6:	2180      	movs	r1, #128	; 0x80
  80004c8:	4822      	ldr	r0, [pc, #136]	; (8000554 <HAL_TIM_PeriodElapsedCallback+0x108>)
  80004ca:	f000 fbe9 	bl	8000ca0 <HAL_GPIO_WritePin>
 			status = 3;
@@ -655,17 +655,17 @@ void HAL_TIM_PeriodElapsedCallback ( TIM_HandleTypeDef * htim )
 			break;
  80004d4:	e025      	b.n	8000522 <HAL_TIM_PeriodElapsedCallback+0xd6>
 		case 3:
-			display7SEG(3);
- 80004d6:	2003      	movs	r0, #3
- 80004d8:	f7ff fe38 	bl	800014c <display7SEG>
-			HAL_GPIO_WritePin(EN2_GPIO_Port, EN2_Pin, 0);
- 80004dc:	2200      	movs	r2, #0
- 80004de:	f44f 7180 	mov.w	r1, #256	; 0x100
- 80004e2:	481c      	ldr	r0, [pc, #112]	; (8000554 <HAL_TIM_PeriodElapsedCallback+0x108>)
- 80004e4:	f000 fbdc 	bl	8000ca0 <HAL_GPIO_WritePin>
 			HAL_GPIO_WritePin(EN1_GPIO_Port, EN1_Pin, 1);
- 80004e8:	2201      	movs	r2, #1
- 80004ea:	2180      	movs	r1, #128	; 0x80
+ 80004d6:	2201      	movs	r2, #1
+ 80004d8:	2180      	movs	r1, #128	; 0x80
+ 80004da:	481e      	ldr	r0, [pc, #120]	; (8000554 <HAL_TIM_PeriodElapsedCallback+0x108>)
+ 80004dc:	f000 fbe0 	bl	8000ca0 <HAL_GPIO_WritePin>
+			display7SEG(3);
+ 80004e0:	2003      	movs	r0, #3
+ 80004e2:	f7ff fe33 	bl	800014c <display7SEG>
+			HAL_GPIO_WritePin(EN2_GPIO_Port, EN2_Pin, 0);
+ 80004e6:	2200      	movs	r2, #0
+ 80004e8:	f44f 7180 	mov.w	r1, #256	; 0x100
  80004ec:	4819      	ldr	r0, [pc, #100]	; (8000554 <HAL_TIM_PeriodElapsedCallback+0x108>)
  80004ee:	f000 fbd7 	bl	8000ca0 <HAL_GPIO_WritePin>
 			status = 4;
@@ -675,17 +675,17 @@ void HAL_TIM_PeriodElapsedCallback ( TIM_HandleTypeDef * htim )
 			break;
  80004f8:	e013      	b.n	8000522 <HAL_TIM_PeriodElapsedCallback+0xd6>
 		case 4:
-			display7SEG(0);
- 80004fa:	2000      	movs	r0, #0
- 80004fc:	f7ff fe26 	bl	800014c <display7SEG>
-			HAL_GPIO_WritePin(EN3_GPIO_Port, EN3_Pin, 0);
- 8000500:	2200      	movs	r2, #0
- 8000502:	f44f 7100 	mov.w	r1, #512	; 0x200
- 8000506:	4813      	ldr	r0, [pc, #76]	; (8000554 <HAL_TIM_PeriodElapsedCallback+0x108>)
- 8000508:	f000 fbca 	bl	8000ca0 <HAL_GPIO_WritePin>
 			HAL_GPIO_WritePin(EN2_GPIO_Port, EN2_Pin, 1);
- 800050c:	2201      	movs	r2, #1
- 800050e:	f44f 7180 	mov.w	r1, #256	; 0x100
+ 80004fa:	2201      	movs	r2, #1
+ 80004fc:	f44f 7180 	mov.w	r1, #256	; 0x100
+ 8000500:	4814      	ldr	r0, [pc, #80]	; (8000554 <HAL_TIM_PeriodElapsedCallback+0x108>)
+ 8000502:	f000 fbcd 	bl	8000ca0 <HAL_GPIO_WritePin>
+			display7SEG(0);
+ 8000506:	2000      	movs	r0, #0
+ 8000508:	f7ff fe20 	bl	800014c <display7SEG>
+			HAL_GPIO_WritePin(EN3_GPIO_Port, EN3_Pin, 0);
+ 800050c:	2200      	movs	r2, #0
+ 800050e:	f44f 7100 	mov.w	r1, #512	; 0x200
  8000512:	4810      	ldr	r0, [pc, #64]	; (8000554 <HAL_TIM_PeriodElapsedCallback+0x108>)
  8000514:	f000 fbc4 	bl	8000ca0 <HAL_GPIO_WritePin>
 			status = 1;
